@@ -18,7 +18,7 @@
 
 prefix = /usr
 
-CC=gcc
+CC ?= gcc
 
 VERSION=1.8.0
 TREE_DEST=tree
@@ -29,8 +29,12 @@ OBJS=tree.o unix.o html.o xml.o json.o hash.o color.o file.o
 
 # Uncomment options below for your particular OS:
 
+# Tilck defaults:
+CFLAGS=-ggdb -pedantic -Wall -DLINUX -Os
+LDFLAGS=-static -s
+
 # Linux defaults:
-CFLAGS=-ggdb -pedantic -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
+#CFLAGS=-ggdb -pedantic -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
 #CFLAGS=-O4 -Wall  -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
 #LDFLAGS=-s
 
