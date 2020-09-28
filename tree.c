@@ -113,6 +113,11 @@ int main(int argc, char **argv)
     charset = "UTF-8";
   }
 
+  if (getenv("TILCK")) {
+    ansilines = TRUE;
+    force_color = TRUE;
+  }
+
 /* Until I get rid of this hack, make it linux/cygwin/HP nonstop only: */
 #if defined (LINUX) || defined (CYGWIN) || defined (__TANDEM)
   mb_cur_max = (int)MB_CUR_MAX;
